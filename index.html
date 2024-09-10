@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="launcher-container">
+        <div class="sidebar">
+            <h2 id="accountName">Robotjxo1</h2>
+            <img id="profilePic" src="default-profile.png" alt="Profile Picture" class="profile-pic">
+            <ul>
+                <li><a href="#" onclick="showTab('play')">MINECRAFT: Java Edition</a></li>
+                <li><a href="#" onclick="showTab('installations')">Installations</a></li>
+                <li><a href="#" onclick="showTab('realms')">Realms</a></li>
+                <li><a href="#" onclick="showTab('skins')">Skins</a></li>
+                <li><a href="#" onclick="showTab('patch-notes')">Patch Notes</a></li>
+                <li><a href="#" onclick="showTab('mods')">Mods</a></li>
+            </ul>
+            <ul class="bottom-links">
+                <li><a href="#" onclick="showTab('whats-new')">What's New</a></li>
+                <li><a href="#" onclick="showTab('settings')">Settings</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="play" class="tab">
+                <h1>Play Minecraft</h1>
+                <div class="version-select">
+                    <label for="versions">Select version:</label>
+                    <select id="versions" onchange="updatePlayButton()">
+                        <option value="1.8.8">1.8.8</option>
+                        <option value="1.5.2">1.5.2</option>
+                    </select>
+                </div>
+                <button id="playButton" class="play-button" onclick="playGame()">Play</button>
+            </div>
+            <div id="installations" class="tab" style="display:none;">
+                <h1>Installations</h1>
+                <!-- Installation Content -->
+            </div>
+            <div id="realms" class="tab" style="display:none;">
+                <h1>Realms</h1>
+                <!-- Realms Content -->
+            </div>
+            <div id="skins" class="tab" style="display:none;">
+                <h1>Skins</h1>
+                <!-- Skins Content -->
+            </div>
+            <div id="patch-notes" class="tab" style="display:none;">
+                <h1>Patch Notes</h1>
+                <!-- Patch Notes Content -->
+            </div>
+            <div id="mods" class="tab" style="display:none;">
+                <h1>Mods</h1>
+                <!-- Mods Content -->
+            </div>
+            <div id="whats-new" class="tab" style="display:none;">
+                <h1>What's New</h1>
+                <!-- What's New Content -->
+            </div>
+            <div id="settings" class="tab" style="display:none;">
+                <h1>Settings</h1>
+                <label for="newAccountName">Change Account Name:</label>
+                <input type="text" id="newAccountName" placeholder="Enter new account name">
+                <button onclick="changeAccountName()">Save Name</button>
+                <br><br>
+                <label for="newProfilePic">Change Profile Picture:</label>
+                <input type="file" id="newProfilePic" accept="image/*" onchange="changeProfilePic()">
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
